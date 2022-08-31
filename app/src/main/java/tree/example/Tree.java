@@ -40,7 +40,7 @@ public class Tree {
                 n.getRange() + 
                 " : " +
                 n.toString() + " : " +
-                n.getParentNode().get().toString() + " : " +
+                (isMethodCallExpr(n) ? "" : n.getParentNode().get().toString() + " : ") +
                 (isBinExpr(n) ? " : " + ((BinaryExpr)n).getOperator() : "") + "\n"
             )
         );
@@ -55,5 +55,9 @@ public class Tree {
 
     private static boolean isBinExpr(Node n) {
         return n.getClass().getSimpleName().equals("BinaryExpr");
+    }
+
+    private static boolean isMethodCallExpr(Node n) {
+        return n.getClass().getSimpleName().equals("MethodCallExpr");
     }
 }
