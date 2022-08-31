@@ -1,0 +1,11 @@
+MethodCallExpr : Optional[(line 9,col 9)-(line 9,col 38)] : System.out.println(18 + 5 * 2)
+FieldAccessExpr : Optional[(line 9,col 9)-(line 9,col 18)] : System.out
+NameExpr : Optional[(line 9,col 9)-(line 9,col 14)] : System
+SimpleName : Optional[(line 9,col 9)-(line 9,col 14)] : System
+SimpleName : Optional[(line 9,col 16)-(line 9,col 18)] : out
+SimpleName : Optional[(line 9,col 20)-(line 9,col 26)] : println
+BinaryExpr : Optional[(line 9,col 28)-(line 9,col 37)] : 18 + 5 * 2 : PLUS
+IntegerLiteralExpr : Optional[(line 9,col 28)-(line 9,col 29)] : 18
+BinaryExpr : Optional[(line 9,col 33)-(line 9,col 37)] : 5 * 2 : MULTIPLY
+IntegerLiteralExpr : Optional[(line 9,col 33)-(line 9,col 33)] : 5
+IntegerLiteralExpr : Optional[(line 9,col 37)-(line 9,col 37)] : 2
