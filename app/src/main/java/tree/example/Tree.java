@@ -39,7 +39,8 @@ public class Tree {
                 " : " + 
                 n.getRange() + 
                 " : " +
-                n.toString() +
+                n.toString() + " : " +
+                n.getParentNode().get().toString() + " : " +
                 (isBinExpr(n) ? " : " + ((BinaryExpr)n).getOperator() : "") + "\n"
             )
         );
