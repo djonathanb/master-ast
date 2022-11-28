@@ -26,16 +26,16 @@ public class Tree {
         var sourceRoot = new SourceRoot(CodeGenerationUtils.mavenModuleRoot(Tree.class).resolve("src/main/resources"));
 
         // Our sample is in the root of this directory, so no package name.
-        var cu = sourceRoot.parse("", "App.java");
+        var comp = sourceRoot.parse("", "App.java");
 
         Log.info("Positivizing!");
 
         var treeContent = new StringBuilder();
 
-        cu.findFirst(MethodDeclaration.class).get()
-          .findFirst(ExpressionStmt.class).get()
-          .findFirst(MethodCallExpr.class).get()
-          .walk(n -> treeContent.append(isComment(n) ? "" : n.getClass().getSimpleName() + 
+        comp.findFirst(MethodDeclaration.class).get()
+            .findFirst(ExpressionStmt.class).get()
+            .findFirst(MethodCallExpr.class).get()
+            .walk(n -> treeContent.append(isComment(n) ? "" : n.getClass().getSimpleName() + 
                 " : " + 
                 n.getRange() + 
                 " : " +
